@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>flavorfinder: Discover Recipes</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 shadow-lg">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <h1 class="text-4xl font-extrabold mb-4 md:mb-0">flavorfinder</h1>
+      <p class="text-xl font-light">Discover Your Next Favorite Recipe</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6 flex-grow">
+    <section class="bg-white p-8 rounded-xl shadow-lg mb-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Find Your Recipe</h2>
+      <div class="flex flex-col md:flex-row gap-4 mb-6">
+        <input type="text" id="searchInput" placeholder="e.g., chicken pasta"
+               class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button id="searchButton"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+          Search Recipes
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" id="vegetarianFilter" value="vegetarian" class="form-checkbox h-5 w-5 text-blue-600">
+          <span class="text-gray-700">Vegetarian</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" id="veganFilter" value="vegan" class="form-checkbox h-5 w-5 text-blue-600">
+          <span class="text-gray-700">Vegan</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" id="glutenFreeFilter" value="glutenFree" class="form-checkbox h-5 w-5 text-blue-600">
+          <span class="text-gray-700">Gluten-Free</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" id="dairyFreeFilter" value="dairyFree" class="form-checkbox h-5 w-5 text-blue-600">
+          <span class="text-gray-700">Dairy-Free</span>
+        </label>
+      </div>
+    </section>
+
+    <div id="loadingIndicator" class="hidden flex justify-center items-center py-8">
+      <div class="loader"></div>
+      <p class="ml-4 text-lg text-gray-600">Loading delicious recipes...</p>
+    </div>
+    <div id="errorMessage" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg text-center">
+      <strong class="font-bold">Oops!</strong> <span id="errorText">Something went wrong.</span>
+    </div>
+    <div id="noResultsMessage" class="hidden bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-lg text-center">
+      <strong>No Recipes Found!</strong> Try a different search or change your filters.
+    </div>
+
+    <section id="recipeResults" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></section>
+  </main>
+
+  <footer class="bg-gray-800 text-white p-6 text-center mt-8">
+    <p>&copy; 2024 flavorfinder. All rights reserved.</p>
+    <p class="text-sm mt-2">Powered by <a href="https://spoonacular.com/food-api" target="_blank" class="text-blue-400 hover:underline">Spoonacular API</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

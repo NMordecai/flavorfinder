@@ -1,2 +1,0 @@
-# flavorfinder
-flavor finder application
