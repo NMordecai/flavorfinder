@@ -1,0 +1,43 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# Logs
+logs/
+*.log
+*.out
+*.pid
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Docker
+*.pid
+*.seed
+*.bak
+*.backup
+*.swp
+docker-compose.override.yml
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Temporary
+*.tmp
+*.temp
+*.bak
+*.old
+
+# Ignore everything in /web_infra_lab/data except .gitkeep (if you use one)
+web_infra_lab/data/*
+!web_infra_lab/data/.gitkeep
