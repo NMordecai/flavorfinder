@@ -6,6 +6,9 @@ The goal of this project was to build a modern, frontend-only application that i
 
 Users can search for recipes by keyword (e.g., "chicken", "pasta", "salad") and refine results using dietary filters such as Vegetarian, Vegan, Gluten-Free, and Dairy-Free. Each result displays a recipe card with an image, publisher, and a link to view the full recipe.
 
+# Demo video
+https://youtu.be/G66FaeCpCyo
+
 ## 🚀 Running the App Locally
 You can run FlavorFinder on your local machine in just a few steps. All you need is Node.js and npm installed.
 
